@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pato em CSS</title>
+  <style>
+ .pato {
+  width: 200px;
+  height: 120px;
+  position: relative;
+}
+
+.corpo {
+  width: 120px;
+  height: 80px;
+  background-color: yellow;
+  border-radius: 50px 50px 10px 10px;
+  position: absolute;
+  top: 40px;
+}
+
+.olho {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  left: 60px;
+}
+
+.bico {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 40px solid orange;
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  transform: rotate(180deg);
+}
+
+  </style>
+</head>
+<body>
+  <div class="pato">
+    <div class="olho"></div>
+    <div class="corpo"></div>
+    <div class="bico"></div>
+  </div>
+</body>
+</html>

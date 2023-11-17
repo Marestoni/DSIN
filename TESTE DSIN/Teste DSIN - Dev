@@ -1,0 +1,123 @@
+9)
+SELECT CDCLICODIGO, CDCLINOME, CDCLICIDADE
+FROM CDCLIENTE
+WHERE CDCLIATIVO = 'S'
+  AND CDCLIUF = 'GO'
+ 
+
+10) Considerando o seguinte DER (Diagrama Entidade Relacionamento):
+Onde: NN= NOT NULL.
+A) É certo dizer que o relacionamento entre da tabela LCATENDIMENTO para
+CDFUNCIONARIO, é :
+[ ] 1:0 (Um para nenhum)
+[ ] 1:N (Um para muitos)
+[ x] N:1 (Muitos para um)
+[ ] M:N (Muitos para Muitos)
+[ ] 0:N (Zero a muitos)
+B) Assinale com X as afirmações corretas:
+[ ] Nenhum atendimento pode possuir a mesma data e hora;
+[x ] Um funcionário pode atender vários clientes, sendo um cliente por vez;
+[ ] Um funcionário pode atender um cliente que não possua um nome
+cadastrado;
+[ ] Um cliente pode estar cadastrado e não ter nenhum atendimento;
+[ ] Um cliente pode se
+
+
+11)
+--a
+SELECT CDFNOME
+FROM CDFUNCIONARIO F
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM LCAATENDIMENTO A
+    WHERE A.LCAFUNCIONARIO = F.CDFCODIGO
+);
+
+--b
+SELECT C.CDCLINOME AS NomeCliente, COALESCE(COUNT(A.LCACLIENTE), 0) AS QuantidadeAtendimentos
+FROM CDCLIENTE C
+LEFT JOIN LCAATENDIMENTO A ON C.CDCLICODIGO = A.LCACLIENTE
+GROUP BY C.CDCLICODIGO, C.CDCLINOME;
+
+--c
+SELECT CD.CDCLINOME AS NomeCliente, LA.LCADATAHORAATEND AS DataAtendimento
+FROM CDCLIENTE CD
+JOIN LCAATENDIMENTO LA ON CD.CDCLICODIGO = LA.LCACLIENTE
+WHERE 
+    (YEAR(LA.LCADATAHORAATEND) = 2011 AND 
+    MONTH(LA.LCADATAHORAATEND) BETWEEN 1 AND 2) 
+    OR
+    (YEAR(LA.LCADATAHORAATEND) = 2011 AND 
+    MONTH(LA.LCADATAHORAATEND) BETWEEN 7 AND 12);
+	
+
+12)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pato em CSS</title>
+  <style>
+ .pato {
+  width: 200px;
+  height: 120px;
+  position: relative;
+}
+
+.corpo {
+  width: 120px;
+  height: 80px;
+  background-color: yellow;
+  border-radius: 50px 50px 10px 10px;
+  position: absolute;
+  top: 40px;
+}
+
+.olho {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  left: 60px;
+}
+
+.bico {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 40px solid orange;
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  transform: rotate(180deg);
+}
+
+  </style>
+</head>
+<body>
+  <div class="pato">
+    <div class="olho"></div>
+    <div class="corpo"></div>
+    <div class="bico"></div>
+  </div>
+</body>
+</html>
+
+
+13)
+Para garantir a entrega dos próximos relatórios dentro do prazo, eu planejaria detalhadamente as tarefas, 
+priorizaria o que é mais crítico, acompanharia de perto o progresso do trabalho e manteria uma comunicação aberta 
+com a equipe e o cliente. Estaria sempre pronto para ajustar o plano se algo inesperado surgisse.
+
+14)
+a)
+Para ajudar o setor de suporte diante das divergências nos relatórios, eu investigaria as mudanças feitas recentemente na rotina de cadastro 
+de produtos, analisaria dados, tentaria reproduzir o problema em testes em conjunto com o suporte e estaria disponível para oferecer 
+suporte contínuo.
+
+b)
+Com o levantamento dos dados, replicaria no código e analisaria a montagem da massa de dados do relatório. Dessa forma, identificaria 
+as divergências e aplicaria as correções,informando meu superior sobre o tempo necessário para essa correção, a fim de integrá-la às demandas já existentes.
